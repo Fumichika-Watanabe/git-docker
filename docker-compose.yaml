@@ -1,12 +1,14 @@
 version: "3"
 services: 
-    app:
+    python3:
+        restart: always
         build: .
-        volumes: 
-            - ".:/app"
-        ports: 
-            - "80:80"
+        container_name: 'python3'
+        working_dir: '/root/'
         tty: true
+        volumes:
+          - ./apt/opt:/root/opt
+    
     
     db:
         build: ./db
