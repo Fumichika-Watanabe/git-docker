@@ -7,7 +7,7 @@ services:
         working_dir: '/root/'
         tty: true
         volumes:
-          - ./apt/opt:/root/opt
+          - ./app/opt:/root/opt
     
     
     db:
