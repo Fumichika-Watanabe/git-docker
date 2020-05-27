@@ -5,5 +5,16 @@ services:
         volumes: 
             - ".:/app"
         ports: 
-            - "3000:3000"
+            - "80:80"
+        tty: true
+    
+    db:
+        build: ./db
+        ports:
+            - "3306:3306"
+        volumes:
+            - ./data
+        environment: 
+            MYSQL_ROOT_PASSWORD: root
+
         tty: true
